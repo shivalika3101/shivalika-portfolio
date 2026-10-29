@@ -38,8 +38,8 @@ const projects: Project[] = [
         url: "https://github.com/ZahraSabouri/CMT307_GreatEnergyPredictor",
       },
     ],
-    image: "/images/placeholder.webp",
-    alt: "Building Energy Prediction results",
+    image: "/images/energy-prediction-project.png",
+    alt: "Bar chart of RMSLE: median baseline 1.33, LightGBM 0.523, team ensemble 0.517",
   },
   {
     id: "02",
@@ -50,11 +50,12 @@ const projects: Project[] = [
       "A web app that identifies household waste from a photo or live camera, sorts it into one of 30 categories and recommends the right bin. I built the React frontend and login flow, the protected image-classification API, prediction history and bin-verification feedback, and integrated a four-model CNN ensemble (MobileNetV2, EfficientNet-B0, ResNet50, DenseNet121) trained by teammates.",
     results:
       "A working end-to-end product that takes a user photo through the API to a model prediction and stores results in PostgreSQL.",
-    // TODO: add TensorFlow or PyTorch, whichever the team used
-    stack: "React, Vite, FastAPI, PostgreSQL, Docker",
-    links: [{ label: "GitHub", url: "" }],
-    image: "/images/placeholder.webp",
-    alt: "WasteWise AI classifying an item",
+    stack: "React, Vite, FastAPI, PostgreSQL, Docker, PyTorch, TensorFlow/Keras",
+    links: [
+      { label: "GitHub", url: "https://github.com/shivalika3101/WasteWise-AI" },
+    ],
+    image: "/images/wastewise-project.png",
+    alt: "WasteWise AI home page",
   },
   {
     id: "03",
@@ -76,8 +77,8 @@ const projects: Project[] = [
         url: "https://github.com/shivalika3101/AI-Jobs-Dashboard",
       },
     ],
-    image: "/images/placeholder.webp",
-    alt: "AI Jobs Market Dashboard",
+    image: "/images/ai-jobs-dashboard-project.png",
+    alt: "AI Jobs Market Dashboard showing filters, insights and top paying roles",
   },
   {
     id: "04",
