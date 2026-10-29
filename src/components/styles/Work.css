@@ -84,6 +84,34 @@
 .work-info > p {
   width: 90%;
 }
+.work-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  font-size: 12px;
+  border: 1px solid var(--accentColor);
+  border-radius: 20px;
+  color: var(--accentColor);
+}
+.work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.work-links a {
+  font-size: 14px;
+  padding: 6px 14px;
+  border: 1px solid #363636;
+  border-radius: 20px;
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.work-links a:hover {
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+}
 .work-image {
   display: flex;
   width: 100%;

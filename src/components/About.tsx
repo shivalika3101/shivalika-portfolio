@@ -19,9 +19,10 @@ const About = () => {
         </p>
         <p className="para">
           I work with Java, Python, SQL, and backend frameworks like Spring
-          Boot, and I'm currently exploring data science and machine learning
-          through hands-on projects. I enjoy solving problems methodically and
-          building systems that are practical and efficient.
+          Boot. I build machine learning models and data pipelines, from
+          forecasting on 20M+ records to deploying models in web apps. I enjoy
+          solving problems methodically and building systems that are
+          practical and efficient.
         </p>
       </div>
     </div>

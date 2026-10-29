@@ -9,6 +9,9 @@ const backendSkills = [
   "MySQL",
   "Redis",
   "SQLite",
+  "FastAPI",
+  "PostgreSQL",
+  "Docker",
 ];
 
 const dataSkills = [
@@ -20,6 +23,11 @@ const dataSkills = [
   "Data Cleaning",
   "Data Visualisation",
   "Machine Learning",
+  "LightGBM",
+  "XGBoost",
+  "Streamlit",
+  "Plotly",
+  "R (learning)",
 ];
 
 const tools = [

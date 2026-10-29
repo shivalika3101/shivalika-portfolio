@@ -51,7 +51,7 @@ const Contact = () => {
               className="contact-photo"
             />
             <h5>
-              <MdCopyright /> 2025
+              <MdCopyright /> 2026
             </h5>
           </div>
         </div>
