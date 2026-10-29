@@ -1,6 +1,6 @@
 # Shivalika Karan Bora Portfolio
 
-Interactive portfolio for Shivalika Karan Bora, Data Scientist and Data Engineer. Live at https://shivalika-portfolio.vercel.app
+Interactive portfolio for Shivalika Karan Bora, Data Scientist and Data Engineer. Live at https://shivalika-karan-bora.vercel.app
 
 ![Portfolio Preview](./public/images/banner.png)
 
