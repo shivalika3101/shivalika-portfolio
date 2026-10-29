@@ -52,29 +52,6 @@ const Academics = () => {
               </li>
             </ul>
           </div>
-
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Higher Secondary</h4>
-                <h5>Deep Memorial Public School</h5>
-              </div>
-              <h3>2019</h3>
-            </div>
-            <ul className="career-points">
-              <li>
-                Completed schooling with a focus on science subjects.
-              </li>
-              <li>
-                Developed a strong foundation in analytical thinking and problem
-                solving.
-              </li>
-              <li>
-                Built the early interest in logical reasoning and technical
-                fields that later led me to computer science.
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>

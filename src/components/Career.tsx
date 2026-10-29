@@ -23,20 +23,15 @@ const Career = () => {
             </div>
             <ul className="career-points">
               <li>
-                Supported student wellbeing and acted as a first point of
-                contact for residents.
+                Support student wellbeing as a first point of contact for
+                residents, signposting them to the right support.
               </li>
               <li>
-                Helped manage welfare and safety concerns in a calm and
-                practical manner.
+                Handle welfare and safety concerns calmly and practically.
               </li>
               <li>
-                Organised community events and worked with university teams to
-                build an inclusive environment.
-              </li>
-              <li>
-                Strengthened communication, teamwork, responsibility, and
-                problem-handling skills.
+                Organise community events, including weekly drop-ins and Diwali,
+                Holi and craft events.
               </li>
             </ul>
           </div>

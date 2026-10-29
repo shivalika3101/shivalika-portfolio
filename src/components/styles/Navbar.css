@@ -13,15 +13,17 @@
   z-index: 9999;
 }
 .header ul {
-  font-size: 12px;
+  font-size: 11px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
   list-style: none;
-  column-gap: 40px;
+  column-gap: 14px;
   row-gap: 8px;
-  align-items: end;
+  align-items: center;
 }
 .header ul li {
   margin-left: 0px;
@@ -48,16 +50,26 @@
 
 .navbar-logo {
   display: block;
-  width: 84px;
+  width: 64px;
   height: auto;
 }
-@media only screen and (min-width: 500px) {
+
+/* Phones and tablets: give the fixed menu a solid background so page text
+   doesn't show through it while scrolling. */
+@media only screen and (max-width: 1024px) {
   .header {
-    padding: 20px 0px;
-  }
-  .header ul {
-    flex-direction: row;
     align-items: center;
+    padding: 12px 0px;
+    background-color: rgba(11, 8, 12, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 0 0 100vmax rgba(11, 8, 12, 0.92);
+    clip-path: inset(0 -100vmax);
+  }
+}
+@media only screen and (min-width: 500px) {
+  .header ul {
+    column-gap: 40px;
     font-size: 14px;
   }
   .header ul li {
@@ -67,6 +79,14 @@
     font-size: 16px;
   }
 
+  .navbar-logo {
+    width: 90px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .header {
+    padding: 20px 0px;
+  }
   .navbar-logo {
     width: 110px;
   }

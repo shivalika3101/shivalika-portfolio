@@ -1,7 +1,32 @@
 import * as THREE from "three";
-import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
+import { GLTF, GLTFLoader } from "three-stdlib";
 import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
-import { decryptFile } from "./decrypt";
+
+// "Business Girl" by aki74 (https://sketchfab.com/aki74), CC-BY-4.0.
+const MODEL_URL = "/models/business_girl.glb";
+
+// Height of the model in scene units, and where her feet sit.
+// The camera looks at y = 13.1, so this frames her from the head down to the waist.
+const TARGET_HEIGHT = 11.5;
+const FEET_Y = 3.4;
+
+export const BONES = {
+  head: "Head_3",
+  neck: "Neck_4",
+  chest: "Spine2_53",
+};
+
+// Bring the arms down from the model's A-pose into a relaxed standing pose.
+const poseCharacter = (character: THREE.Object3D) => {
+  const leftArm = character.getObjectByName("LeftArm_27");
+  const rightArm = character.getObjectByName("RightArm_51");
+  const leftForeArm = character.getObjectByName("LeftForeArm_26");
+  const rightForeArm = character.getObjectByName("RightForeArm_50");
+  if (leftArm) leftArm.rotation.x += 0.7;
+  if (rightArm) rightArm.rotation.x += 0.7;
+  if (leftForeArm) leftForeArm.rotation.z += 0.15;
+  if (rightForeArm) rightForeArm.rotation.z -= 0.15;
+};
 
 const setCharacter = (
   renderer: THREE.WebGLRenderer,
@@ -10,85 +35,51 @@ const setCharacter = (
   onProgress?: (progress: number) => void
 ) => {
   const loader = new GLTFLoader();
-  const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("/draco/");
-  loader.setDRACOLoader(dracoLoader);
 
-  const loadCharacter = async () => {
-    return new Promise<GLTF | null>((resolve, reject) => {
-      if (onProgress) onProgress(0);
-      decryptFile(
-        "/models/character.enc",
-        "Character3D#@",
-        (decryptProgress) => {
-          if (onProgress) {
-            onProgress(Math.floor(decryptProgress * 0.2));
-          }
-        }
-      )
-        .then((encryptedBlob) => {
-          if (onProgress) onProgress(20);
+  const loadCharacter = () =>
+    new Promise<GLTF>((resolve, reject) => {
+      onProgress?.(0);
+      loader.load(
+        MODEL_URL,
+        async (gltf) => {
+          const character = gltf.scene;
 
-          const blobUrl = URL.createObjectURL(new Blob([encryptedBlob]));
+          const box = new THREE.Box3().setFromObject(character);
+          const scale = TARGET_HEIGHT / (box.max.y - box.min.y);
+          character.scale.setScalar(scale);
+          character.position.y = FEET_Y - box.min.y * scale;
 
-          let character: THREE.Object3D;
-          loader.load(
-            blobUrl,
-            async (gltf) => {
-              character = gltf.scene;
+          poseCharacter(character);
 
-              if (onProgress) onProgress(90);
-
-              await renderer.compileAsync(character, camera, scene);
-
-              if (onProgress) onProgress(95);
-
-              character.traverse((child: THREE.Object3D) => {
-                if (child instanceof THREE.Mesh) {
-                  child.castShadow = true;
-                  child.receiveShadow = true;
-                  child.frustumCulled = true;
-                }
-              });
-
-              if (onProgress) onProgress(100);
-
-              resolve(gltf);
-              setCharTimeline(character, camera);
-              setAllTimeline();
-              character!.getObjectByName("footR")!.position.y = 3.36;
-              character!.getObjectByName("footL")!.position.y = 3.36;
-              dracoLoader.dispose();
-            },
-            (xhr) => {
-              if (xhr.lengthComputable) {
-                const loadProgress = (xhr.loaded / xhr.total) * 70;
-                const totalProgress = 20 + loadProgress;
-                if (onProgress) {
-                  onProgress(Math.floor(totalProgress));
-                }
-              } else {
-                const estimatedProgress = Math.min(
-                  20 + (xhr.loaded / 1000000) * 10,
-                  85
-                );
-                if (onProgress) {
-                  onProgress(Math.floor(estimatedProgress));
-                }
-              }
-            },
-            (error) => {
-              console.error("Error loading GLTF model:", error);
-              reject(error);
+          character.traverse((child) => {
+            if (child instanceof THREE.Mesh) {
+              child.castShadow = true;
+              child.receiveShadow = true;
             }
-          );
-        })
-        .catch((err) => {
-          reject(err);
-          console.error(err);
-        });
+          });
+
+          onProgress?.(90);
+          // Pre-compiling shaders avoids a stutter, but some browsers never finish it.
+          await Promise.race([
+            renderer.compileAsync(character, camera, scene),
+            new Promise((done) => setTimeout(done, 3000)),
+          ]);
+          onProgress?.(100);
+
+          resolve(gltf);
+          setCharTimeline(character, camera);
+          setAllTimeline();
+        },
+        (xhr) => {
+          const total = xhr.lengthComputable ? xhr.total : 1_800_000;
+          onProgress?.(Math.min(85, Math.floor((xhr.loaded / total) * 85)));
+        },
+        (error) => {
+          console.error("Error loading character model:", error);
+          reject(error);
+        }
+      );
     });
-  };
 
   return { loadCharacter };
 };

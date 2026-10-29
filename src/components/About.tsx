@@ -6,23 +6,14 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I'm an MSc Data Science student at Cardiff University with a
-          background in backend engineering from my experience at Tata
-          Consultancy Services. I've worked on REST APIs, batch processing
-          systems, and production-level applications, which shaped my approach
-          to building reliable and structured systems.
+          I’m an MSc Data Science student at Cardiff University with two years
+          as a backend software engineer at Tata Consultancy Services, building
+          REST APIs and batch systems for a national government platform.
         </p>
         <p className="para">
-          Alongside my studies, I work as a Residence Life Assistant, where I
-          support students and help organise community events, strengthening my
-          communication and teamwork skills.
-        </p>
-        <p className="para">
-          I work with Java, Python, SQL, and backend frameworks like Spring
-          Boot. I build machine learning models and data pipelines, from
-          forecasting on 20M+ records to deploying models in web apps. I enjoy
-          solving problems methodically and building systems that are
-          practical and efficient.
+          I now build machine learning models and data pipelines, from
+          forecasting on 20M+ records to deploying models in web apps, using
+          Python, SQL, Java and Spring Boot.
         </p>
       </div>
     </div>

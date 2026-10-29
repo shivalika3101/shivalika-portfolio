@@ -1,8 +1,8 @@
 # Shivalika Karan Bora Portfolio
 
-Interactive personal portfolio website built to showcase my backend engineering experience, MSc Data Science journey, technical projects, and skills.
+Interactive portfolio for Shivalika Karan Bora, Data Scientist and Data Engineer. Live at https://shivalika-portfolio.vercel.app
 
-![Portfolio Preview](./public/images/portfolio-project.png)
+![Portfolio Preview](./public/images/banner.png)
 
 ## Overview
 
@@ -28,17 +28,11 @@ This project is a modern portfolio website created with React, TypeScript, Vite,
 
 ## Featured Projects
 
-### Fluffy AI Assistant
-
-Python-based desktop AI assistant with voice and text command processing, SQLite-backed data handling, and workflow automation.
-
-### Image Analysis Project
-
-GUI-based Python application for grayscale conversion, blur, cropping, histogram generation, edge detection, thresholding, and RGB channel operations.
-
-### Personal Portfolio
-
-Interactive portfolio website built to present projects, work experience, academic background, and technical skills.
+- **Building Energy Prediction**: LightGBM time-series forecasting on 20M+ meter readings (team project). [Code](https://github.com/ZahraSabouri/CMT307_GreatEnergyPredictor)
+- **WasteWise AI**: full-stack waste classification app with a four-model CNN ensemble (team project). [Code](https://github.com/shivalika3101/WasteWise-AI)
+- **AI Jobs Market Dashboard**: interactive Streamlit dashboard of AI hiring trends. [Live demo](https://ai-jobs-dashboard-i5zatt46vkovdwln3veuw9.streamlit.app/) · [Code](https://github.com/shivalika3101/AI-Jobs-Dashboard)
+- **Fluffy AI Assistant**: desktop voice assistant prototype using Whisper. [Code](https://github.com/shivalika3101/Fluffy-AI-Assistant)
+- **Image Analysis**: Tkinter image processing app. [Code](https://github.com/shivalika3101/Image-Analysis)
 
 ## Getting Started
 
@@ -60,3 +54,7 @@ npm run build
 - Email: `shivalikauni@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/shivalika31`
 - GitHub: `https://github.com/shivalika3101`
+
+## Credits
+
+- 3D character: ["Business Girl"](https://sketchfab.com/3d-models/business-girl-c180f7eb4d6e430f82973bbf0417f5b9) by [aki74](https://sketchfab.com/aki74), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

@@ -36,47 +36,19 @@ export const handleTouchEnd = (
 
 export const handleHeadRotation = (
   headBone: THREE.Object3D,
+  rest: THREE.Euler,
   mouseX: number,
   mouseY: number,
   interpolationX: number,
   interpolationY: number,
   lerp: (x: number, y: number, t: number) => number
 ) => {
-  if (!headBone) return;
-  if (window.scrollY < 200) {
-    const maxRotation = Math.PI / 6;
-    headBone.rotation.y = lerp(
-      headBone.rotation.y,
-      mouseX * maxRotation,
-      interpolationY
-    );
-    let minRotationX = -0.3;
-    let maxRotationX = 0.4;
-    if (mouseY > minRotationX) {
-      if (mouseY < maxRotationX) {
-        headBone.rotation.x = lerp(
-          headBone.rotation.x,
-          -mouseY - 0.5 * maxRotation,
-          interpolationX
-        );
-      } else {
-        headBone.rotation.x = lerp(
-          headBone.rotation.x,
-          -maxRotation - 0.5 * maxRotation,
-          interpolationX
-        );
-      }
-    } else {
-      headBone.rotation.x = lerp(
-        headBone.rotation.x,
-        -minRotationX - 0.5 * maxRotation,
-        interpolationX
-      );
-    }
-  } else {
-    if (window.innerWidth > 1024) {
-      headBone.rotation.x = lerp(headBone.rotation.x, -0.4, 0.03);
-      headBone.rotation.y = lerp(headBone.rotation.y, -0.3, 0.03);
-    }
-  }
+  // Near the top of the page the head follows the pointer; further down it eases back.
+  const following = window.scrollY < 200;
+  const targetY = following ? rest.y + mouseX * 0.45 : rest.y;
+  const targetX = following
+    ? rest.x + THREE.MathUtils.clamp(-mouseY, -0.6, 0.6) * 0.25
+    : rest.x;
+  headBone.rotation.y = lerp(headBone.rotation.y, targetY, interpolationY);
+  headBone.rotation.x = lerp(headBone.rotation.x, targetX, interpolationX);
 };
