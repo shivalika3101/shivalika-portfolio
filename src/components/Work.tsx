@@ -67,7 +67,10 @@ const projects: Project[] = [
       "Turns two raw datasets into a clickable, decision-ready view of AI hiring trends.",
     stack: "Python, Pandas, Streamlit, Plotly",
     links: [
-      { label: "Live demo", url: "" },
+      {
+        label: "Live demo",
+        url: "https://ai-jobs-dashboard-i5zatt46vkovdwln3veuw9.streamlit.app/",
+      },
       {
         label: "GitHub",
         url: "https://github.com/shivalika3101/AI-Jobs-Dashboard",
