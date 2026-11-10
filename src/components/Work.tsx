@@ -78,7 +78,7 @@ const projects: Project[] = [
       },
     ],
     image: "/images/ai-jobs-dashboard-project.png",
-    alt: "AI Jobs Market Dashboard showing filters, insights and top paying roles",
+    alt: "AI Job Market dashboard overview with filters, KPI cards (15,000 postings, $99,705 median salary, 20 countries, 33% fully remote) and key takeaways",
   },
   {
     id: "04",
