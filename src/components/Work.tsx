@@ -28,9 +28,9 @@ const projects: Project[] = [
     category: "Machine Learning and Time-Series Forecasting",
     tag: "Team project (6 people)",
     description:
-      "Forecast hourly energy consumption for around 1,450 buildings using more than 20 million meter readings from the ASHRAE Great Energy Predictor III dataset. Merged meter, building and weather data, engineered lag, rolling-window and calendar features, and validated models on a time-based split. I built and tuned the LightGBM model, which fed into the team's soft-voting ensemble.",
+      "Forecast hourly energy consumption for around 1,450 buildings using more than 20 million meter readings from the ASHRAE Great Energy Predictor III dataset. I led the time-series analysis, built leakage-safe lag (24h, 72h, 168h) and rolling-window features, and trained LightGBM and XGBoost on a chronological split (Jan–Oct train, Nov–Dec validation). I tuned LightGBM with RandomizedSearchCV, and it fed into the team's soft-voting ensemble.",
     results:
-      "LightGBM RMSLE 0.523. Team ensemble about 0.517, roughly 61% lower error than the median baseline (1.33).",
+      "My tuned LightGBM: RMSLE 0.509. Team CatBoost + LightGBM ensemble: about 0.50, over 60% lower error than the median baseline (1.33).",
     stack: "Python, Pandas, NumPy, LightGBM, XGBoost, CatBoost, scikit-learn",
     links: [
       {
@@ -39,7 +39,7 @@ const projects: Project[] = [
       },
     ],
     image: "/images/energy-prediction-project.png",
-    alt: "Bar chart of RMSLE: median baseline 1.33, LightGBM 0.523, team ensemble 0.517",
+    alt: "Bar chart of RMSLE: median baseline 1.33, my tuned LightGBM 0.509, team ensemble 0.50",
   },
   {
     id: "02",
@@ -47,7 +47,7 @@ const projects: Project[] = [
     category: "Full-Stack Machine Learning Web Application",
     tag: "Team project",
     description:
-      "A web app that identifies household waste from a photo or live camera, sorts it into one of 30 categories and recommends the right bin. I built the React frontend and login flow, the protected image-classification API, prediction history and bin-verification feedback, and integrated a four-model CNN ensemble (MobileNetV2, EfficientNet-B0, ResNet50, DenseNet121) trained by teammates.",
+      "A web app that identifies household waste from a photo or live camera, sorts it into one of 30 categories and recommends the right bin. I built most of the React frontend and login flow, the protected (JWT) image-classification API, prediction history and bin-verification feedback, and integrated a four-model CNN ensemble (MobileNetV2, EfficientNet-B0, ResNet50, DenseNet121) trained by teammates.",
     results:
       "A working end-to-end product that takes a user photo through the API to a model prediction and stores results in PostgreSQL.",
     stack: "React, Vite, FastAPI, PostgreSQL, Docker, PyTorch, TensorFlow/Keras",
@@ -63,9 +63,9 @@ const projects: Project[] = [
     category: "Data Analysis and Visualisation",
     tag: "Solo project",
     description:
-      "An interactive dashboard exploring how AI is changing the job market. Merged and cleaned two job-market datasets, defined KPIs and built six chart types with filters, plus automatically generated insights that summarise the trends for the selected view.",
+      "An interactive dashboard exploring how AI is changing the job market, built on 15,000 AI job postings (Kaggle, Jan 2024 – Apr 2025). Headline KPIs (postings, median salary, countries, remote share), filters for country, experience, work mode and year, six chart types across salary, skills, industry and trend tabs, plus plain-language insights that update with the filters.",
     results:
-      "Turns two raw datasets into a clickable, decision-ready view of AI hiring trends.",
+      "Turns a raw job-postings dataset into a clickable, decision-ready view of AI hiring trends, with a searchable table and CSV export.",
     stack: "Python, Pandas, Streamlit, Plotly",
     links: [
       {

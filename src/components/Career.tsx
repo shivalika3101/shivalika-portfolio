@@ -16,53 +16,34 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Residence Life Assistant</h4>
-                <h5>Cardiff University</h5>
-              </div>
-              <h3>2026 - Present</h3>
-            </div>
-            <ul className="career-points">
-              <li>
-                Support student wellbeing as a first point of contact for
-                residents, signposting them to the right support.
-              </li>
-              <li>
-                Handle welfare and safety concerns calmly and practically.
-              </li>
-              <li>
-                Organise community events, including weekly drop-ins and Diwali,
-                Holi and craft events.
-              </li>
-            </ul>
-          </div>
-
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Software Engineer</h4>
+                <h4>Systems Engineer</h4>
                 <h5>Tata Consultancy Services</h5>
               </div>
-              <h3>2023 - 2025</h3>
+              <h3>2023 - 2026</h3>
             </div>
             <ul className="career-points">
               <li>
-                Worked as a backend software engineer on the Passport Seva
-                system, a large-scale government platform.
+                Worked on the report generation module of Passport Seva, a
+                large-scale government platform, delivering reports such as
+                daily cash collection, rejected applications and application
+                status for regional passport offices.
               </li>
               <li>
-                Designed and developed RESTful APIs using Java and Spring Boot.
+                Built, enhanced and maintained 150+ REST APIs using Java and
+                Spring Boot.
               </li>
               <li>
-                Built and maintained batch processing systems for automated
-                report generation.
+                Automated the daily reporting batches and their delivery,
+                cutting manual reporting effort by about 40%.
               </li>
               <li>
                 Used MySQL and Redis to manage data efficiently and improve
                 system performance.
               </li>
               <li>
-                Debugged production issues and supported stability in a live
-                environment.
+                Debugged production issues, including recovering a failed
+                overnight batch, and helped add failure alerts and validation
+                checks.
               </li>
             </ul>
           </div>

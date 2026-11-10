@@ -6,9 +6,9 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I’m an MSc Data Science student at Cardiff University with two years
-          as a backend software engineer at Tata Consultancy Services, building
-          REST APIs and batch systems for a national government platform.
+          I’m an MSc Data Science student at Cardiff University with over two
+          years as a Systems Engineer at Tata Consultancy Services, building
+          REST APIs and reporting systems for a national government platform.
         </p>
         <p className="para">
           I now build machine learning models and data pipelines, from

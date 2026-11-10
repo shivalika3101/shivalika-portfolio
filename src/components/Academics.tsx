@@ -27,8 +27,29 @@ const Academics = () => {
                 science, machine learning, and analytical problem solving.
               </li>
               <li>
-                Developing practical skills in Python, data analysis, and
-                building data-driven solutions.
+                Modules include Applied Machine Learning, Computational Data
+                Science, Data Visualisation, Foundations of Statistics and Data
+                Science, and Foundations of Operational Research and Analytics.
+              </li>
+            </ul>
+          </div>
+
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>MBA (Online, part-time)</h4>
+                <h5>Manipal University Jaipur</h5>
+              </div>
+              <h3>2025 - 2027</h3>
+            </div>
+            <ul className="career-points">
+              <li>
+                Distance-learning MBA alongside the MSc, covering finance,
+                marketing and operations management.
+              </li>
+              <li>
+                Building the business understanding to connect data insights
+                to real decisions.
               </li>
             </ul>
           </div>

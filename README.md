@@ -51,7 +51,7 @@ npm run build
 
 ## Contact
 
-- Email: `shivalikauni@gmail.com`
+- Email: `123.shivalika@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/shivalika31`
 - GitHub: `https://github.com/shivalika3101`
 
